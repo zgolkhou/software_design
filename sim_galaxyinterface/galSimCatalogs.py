@@ -530,23 +530,6 @@ class GalSimGalaxies(GalSimBase, AstrometryGalaxies, EBVmixin):
                        ('gamma2', 0.0, float),
                        ('kappa', 0.0, float)]
 
-class GalSimRandomWalk(GalSimBase, AstrometryGalaxies, EBVmixin):
-    """
-    This is a GalSimCatalog class for galaxy components (i.e. objects that are shaped
-    like Sersic profiles).
-
-    See the docstring in GalSimBase for explanation of how this class should be used.
-    """
-
-    catalog_type = 'galsim_random_walk'
-    galsim_type = 'RandomWalk'
-    default_columns = [('galacticAv', 0.1, float),
-                       ('galacticRv', 3.1, float),
-                       ('galSimType', 'RandomWalk', str, 10),
-                       ('sindex', 0.0, float),
-                       ('gamma1', 0.0, float),
-                       ('gamma2', 0.0, float),
-                       ('kappa', 0.0, float)]
 
 class GalSimAgn(GalSimBase, AstrometryGalaxies, EBVmixin):
     """
