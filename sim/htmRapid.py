@@ -166,22 +166,6 @@ class Trixel(object):
                 (np.dot(pts, self.cross12)>=0.0) &
                 (np.dot(pts, self.cross20)>=0.0))
 
-    def contains_pt(self, pt):
-        """
-        pt is either a single Cartesian point
-        or an array of Cartesian points (pt[0]
-        is the zeroth point, pt[1] is the first
-        point, etc.).
-
-        Return a boolean or array of booleans
-        denoting whether this point(s) projected
-        onto the unit sphere is/are contained within
-        the current trixel.
-        """
-        if len(pt.shape) == 1:
-            return self._contains_one_pt(pt)
-        return self._contains_many_pts(pt)
-
     def _create_w(self):
 
         w0 = self._corners[1]+self._corners[2]
