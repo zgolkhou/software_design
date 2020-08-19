@@ -144,7 +144,22 @@ class Trixel(object):
                     return True
 
         return False
+    
+    def contains_pt(self, pt):
+        """
+        pt is either a single Cartesian point
+        or an array of Cartesian points (pt[0]
+        is the zeroth point, pt[1] is the first
+        point, etc.).
 
+        Return a boolean or array of booleans
+        denoting whether this point(s) projected
+        onto the unit sphere is/are contained within
+        the current trixel.
+        """
+        if len(pt.shape) == 1:
+            return self._contains_one_pt(pt)
+        return self._contains_many_pts(pt)       
     def _contains_many_pts(self, pts):
         """
         pts is an array of Cartesian points (pts[0] is the zeroth
