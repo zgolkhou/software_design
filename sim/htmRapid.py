@@ -329,6 +329,27 @@ class Trixel(object):
         """
         return self._corners
 
+    def _contains_many_pts(self, pts):
+        """
+        pts is an array of Cartesian points (pts[0] is the zeroth
+        point, pts[1] is the first point, etc.; not necessarily on
+        the unit sphere).
+
+        Returns an array of booleans denoting whether or not the
+        projection of each point onto the unit sphere is contained
+        within this trixel.
+
+        See equation 5 of
+
+        Kunszt P., Szalay A., Thakar A. (2006) in "Mining The Sky",
+        Banday A, Zaroubi S, Bartelmann M. eds.
+        ESO Astrophysics Symposia
+        https://www.researchgate.net/publication/226072008_The_Hierarchical_Triangular_Mesh
+        """
+        return ((np.dot(pts, self.cross01)>=0.0) &
+                (np.dot(pts, self.cross12)>=0.0) &
+                (np.dot(pts, self.cross20)>=0.0))
+
     @property
     def bounding_circle(self):
         """
