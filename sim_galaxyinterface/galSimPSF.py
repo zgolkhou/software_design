@@ -167,7 +167,7 @@ class SNRdocumentPSF(DoubleGaussianPSF):
 
         alpha = fwhm/2.3835
 
-        eff_pixel_sigma_sq = pixel_scale*pixel_scale/12.0
+        eff_pixel_sigma_sq = pixel_scale*pixel_scale*1./12.0
 
         sigma = numpy.sqrt(alpha*alpha - eff_pixel_sigma_sq)
         gaussian1 = galsim.Gaussian(sigma=sigma, gsparams=gsparams)
