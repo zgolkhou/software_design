@@ -165,9 +165,6 @@ class SNRdocumentPSF(DoubleGaussianPSF):
         whenever _getPSF is called in this class.
         """
 
-        #the expression below is derived by solving equation (30) of the signal-to-noise
-        #document (www.astro.washington.edu/uses/ivezic/Astr511/LSST_SNRdoc.pdf)
-        #for r at half the maximum of the PSF
         alpha = fwhm/2.3835
 
         eff_pixel_sigma_sq = pixel_scale*pixel_scale/12.0
