@@ -242,7 +242,7 @@ class GalSimPhoSimTest(unittest.TestCase):
         db = fileDBObject(self.disk_name, dtype=self.dtype, runtable='test_disks', idColKey='id')
         db.raColName = 'ra_deg'
         db.decColName = 'dec_deg'
-        db.objectTypeId = 155
+        db.objectTypeId = 120
 
         gs_cat = GalSimPhoSimGalaxies(db, obs_metadata=self.obs)
         gs_cat.bandpassNames = self.obs.bandpass
