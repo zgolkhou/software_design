@@ -209,7 +209,7 @@ class Camera_Wrapper_Test_Class(unittest.TestCase):
         camera_wrapper = LSSTCameraWrapper()
 
         obs_mjd = ObservationMetaData(mjd=60000.0)
-        ra, dec = raDecFromAltAz(35.0, 112.0, obs_mjd)
+        ra, dec = raDecFromAltAz(135.0, 112.0, obs_mjd)
         obs = ObservationMetaData(pointingRA=ra, pointingDec=dec,
                                   mjd=obs_mjd.mjd,
                                   rotSkyPos=22.4,
