@@ -163,7 +163,7 @@ class Camera_Wrapper_Test_Class(unittest.TestCase):
             np.testing.assert_array_equal(dec, dec_wrapper)
 
             ra = obs.pointingRA + (rng.random_sample(10)*50.0-100.0)/60.0
-            dec = obs.pointingDec + (rng.random_sample(10)*50.0-100.0)/60.0
+            dec = obs.pointingDec + (rng.random_sample(10)*150.0-100.0)/160.0
 
             x_pix, y_pix = pixelCoordsFromRaDec(ra, dec, chipName=name, camera=camera,
                                                 obs_metadata=obs)
