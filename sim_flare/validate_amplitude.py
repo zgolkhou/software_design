@@ -77,10 +77,3 @@ plt.ylabel('N')
 plt.legend(header_list, label_list, loc=0, fontsize=10)
 
 
-plt.subplot(2,2,4)
-make_distribution_plot((control_data['amp']-amp_rel)/control_data['amp'],
-                       dx)
-plt.xlabel('(amp - simulated amp)/amp')
-plt.ylabel('N')
-plt.tight_layout()
-plt.savefig('plots/amplitude_plot.png')
