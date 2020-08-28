@@ -29,7 +29,7 @@ control_data = control_data[valid]
 valid = np.where(np.logical_and(control_data['amp']>0.0, control_data['e_dur']>0.0))
 control_data = control_data[valid]
 
-log_ekp_quiescent = 30.67
+log_ekp_quiescent = 30.67*2.
 
 control_log_ekp = log_ekp_quiescent + np.log10(control_data['e_dur'])
 duration = 24.0*60.0*(control_data['stop']-control_data['start'])
