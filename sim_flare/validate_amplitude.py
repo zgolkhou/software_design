@@ -32,7 +32,7 @@ control_data = control_data[valid]
 log_ekp_quiescent = 30.67*2.
 
 control_log_ekp = log_ekp_quiescent + np.log10(control_data['e_dur'])
-duration = 24.0*60.0*(control_data['stop']-control_data['start'])
+duration = 24.0*30.0*(control_data['stop']-control_data['start'])
 
 log_eu = control_log_ekp + np.log10(0.65)
 
