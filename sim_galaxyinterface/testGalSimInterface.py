@@ -483,6 +483,12 @@ class GalSimInterfaceTest(unittest.TestCase):
         if os.path.exists(catName):
             os.unlink(catName)
 
+    def testGalaxyDisks(self):
+        """
+        Test that GalSimInterpreter puts the right number of counts on images of galaxy disks
+        """
+
+            
     def testFakeBandpasses(self):
         """
         Test GalSim catalog with alternate bandpasses
