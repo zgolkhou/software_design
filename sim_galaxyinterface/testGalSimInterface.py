@@ -495,7 +495,8 @@ class GalSimInterfaceTest(unittest.TestCase):
         cat.camera_wrapper = GalSimCameraWrapper(self.camera)
         cat.write_catalog(catName)
         self.catalogTester(catName=catName, catalog=cat, nameRoot='disk')
-
+        if os.path.exists(catName):
+            os.unlink(catName)
             
     def testFakeBandpasses(self):
         """
