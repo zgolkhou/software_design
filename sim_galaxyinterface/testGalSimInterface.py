@@ -487,6 +487,8 @@ class GalSimInterfaceTest(unittest.TestCase):
         """
         Test that GalSimInterpreter puts the right number of counts on images of galaxy disks
         """
+        catName = os.path.join(self.scratch_dir, 'testDiskCat.sav')
+        gals = testGalaxyDiskDBObj(driver=self.driver, database=self.dbName)
 
             
     def testFakeBandpasses(self):
