@@ -160,7 +160,7 @@ class testFakeSedCatalog(testFakeBandpassCatalog):
 
         nameMap = {'km20_5750.fits_g40_5790': 'fakeSed1.dat',
                    'm2.0Full.dat': 'fakeSed2.dat',
-                   'bergeron_6500_85.dat_6700': 'fakeSed3.dat'}
+                   'bergeron_650_850.dat_6700': 'fakeSed3.dat'}
 
         rawNames = self.column_by_name('sedFilename')
         return np.array([nameMap[nn] for nn in rawNames])
