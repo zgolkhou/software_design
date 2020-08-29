@@ -489,6 +489,10 @@ class GalSimInterfaceTest(unittest.TestCase):
         """
         catName = os.path.join(self.scratch_dir, 'testDiskCat.sav')
         gals = testGalaxyDiskDBObj(driver=self.driver, database=self.dbName)
+        catName = os.path.join(self.scratch_dir, 'testDiskCat.sav')
+        gals = testGalaxyDiskDBObj(driver=self.driver, database=self.dbName)
+        cat = testGalaxyCatalog(gals, obs_metadata = self.obs_metadata)
+        cat.camera_wrapper = GalSimCameraWrapper(self.camera)
 
             
     def testFakeBandpasses(self):
