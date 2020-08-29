@@ -493,6 +493,8 @@ class GalSimInterfaceTest(unittest.TestCase):
         gals = testGalaxyDiskDBObj(driver=self.driver, database=self.dbName)
         cat = testGalaxyCatalog(gals, obs_metadata = self.obs_metadata)
         cat.camera_wrapper = GalSimCameraWrapper(self.camera)
+        cat.write_catalog(catName)
+        self.catalogTester(catName=catName, catalog=cat, nameRoot='disk')
 
             
     def testFakeBandpasses(self):
