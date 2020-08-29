@@ -470,19 +470,6 @@ class GalSimInterfaceTest(unittest.TestCase):
         if os.path.exists(catName):
             os.unlink(catName)
 
-    def testGalaxyDisks(self):
-        """
-        Test that GalSimInterpreter puts the right number of counts on images of galaxy disks
-        """
-        catName = os.path.join(self.scratch_dir, 'testDiskCat.sav')
-        gals = testGalaxyDiskDBObj(driver=self.driver, database=self.dbName)
-        cat = testGalaxyCatalog(gals, obs_metadata = self.obs_metadata)
-        cat.camera_wrapper = GalSimCameraWrapper(self.camera)
-        cat.write_catalog(catName)
-        self.catalogTester(catName=catName, catalog=cat, nameRoot='disk')
-        if os.path.exists(catName):
-            os.unlink(catName)
-
     def testStars(self):
         """
         Test that GalSimInterpreter puts the right number of counts on images of stars
