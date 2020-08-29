@@ -177,7 +177,7 @@ class GalSimInterfaceTest(unittest.TestCase):
         deltaRA = np.array([72.0/3600.0])
         deltaDec = np.array([0.0])
         defaults = LSSTdefaults()
-        cls.bandpassNameList = ['u', 'g', 'r', 'i', 'z', 'y']
+        cls.bandpassNameList = ['u', 'g', 'r', 'z', 'y']
         cls.m5 = [16.0+ix for ix in range(len(cls.bandpassNameList))]
         cls.seeing = [defaults._FWHMeff[bb] for bb in cls.bandpassNameList]
         cls.obs_metadata = makePhoSimTestDB(filename=cls.dbName, size=1,
