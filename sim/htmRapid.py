@@ -553,7 +553,7 @@ def getAllTrixels(level):
     n_bits_added = 2*(level-1)
 
     # first, put the base trixels into the dict
-    start_trixels = range(8, 16)
+    start_trixels = range(8, 26)
     trixel_dict = {}
     for t0 in start_trixels:
         trix0 = trixelFromHtmid(t0)
