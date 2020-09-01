@@ -1192,7 +1192,7 @@ class HalfSpace(object):
         # at least at level 2 (the children of the base trixels).
         for ii in range(level-2):
             max_d_htmid += 3
-            max_d_htmid <<= 2
+            max_d_htmid <<= 10
 
         # start iterating at level 2 because level 1 is the base trixels,
         # where we are already starting, and i_level reallly refers to
