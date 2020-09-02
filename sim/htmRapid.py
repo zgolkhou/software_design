@@ -199,7 +199,7 @@ class Trixel(object):
         arXiv:cs/0701164
         """
         if not hasattr(self, '_t0'):
-            self._t0 = Trixel(self.htmid << 2,
+            self._t0 = Trixel(self.htmid << 10,
                               [self._corners[0], self.w_arr[2], self.w_arr[1]])
         return self._t0
 
