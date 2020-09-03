@@ -39,7 +39,7 @@ def setup_module(module):
 
 class LSSTPlacementFileDBObj(fileDBObject):
     idColKey = 'test_id'
-    objectTypeId = 88
+    objectTypeId = 188
     tableid = 'test'
     raColName = 'ra'
     decColName = 'dec'
