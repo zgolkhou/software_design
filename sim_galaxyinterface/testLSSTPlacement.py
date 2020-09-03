@@ -170,7 +170,7 @@ class GalSimPlacementTest(unittest.TestCase):
 
                 im = afwImage.ImageF(imageName).getArray()
                 tot_flux = im.sum()
-                self.assertGreater(tot_flux, 100.0)
+                self.assertGreater(tot_flux, 10.0)
 
                 y_centroid = sum([ii*im[ii,:].sum() for ii in range(im.shape[0])])/tot_flux
                 x_centroid = sum([ii*im[:,ii].sum() for ii in range(im.shape[1])])/tot_flux
