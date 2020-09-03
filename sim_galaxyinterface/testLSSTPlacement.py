@@ -152,7 +152,7 @@ class GalSimPlacementTest(unittest.TestCase):
                 x_pix_wrong, y_pix_wrong = pixel_transformer.cameraPixFromDMPix(dmx_wrong, dmy_wrong,
                                                                                 detector.getName())
 
-                d_ra = 3600.0*(ra_obj - obs.pointingRA)  # in arcseconds
+                d_ra = 360.0*(ra_obj - obs.pointingRA)  # in arcseconds
                 d_dec = 3600.0*(dec_obj - obs.pointingDec)
 
                 create_text_catalog(obs, dbFileName,
