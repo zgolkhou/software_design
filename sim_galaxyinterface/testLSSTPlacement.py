@@ -153,7 +153,7 @@ class GalSimPlacementTest(unittest.TestCase):
                                                                                 detector.getName())
 
                 d_ra = 360.0*(ra_obj - obs.pointingRA)  # in arcseconds
-                d_dec = 3600.0*(dec_obj - obs.pointingDec)
+                d_dec = 360.0*(dec_obj - obs.pointingDec)
 
                 create_text_catalog(obs, dbFileName,
                                     np.array([d_ra]), np.array([d_dec]),
