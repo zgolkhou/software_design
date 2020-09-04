@@ -60,7 +60,13 @@ def make_density_plot(xx_in, yy_in, dd, cmin=0, cmax=150, dc=25):
                                 slice(yy_arr.min()*dd, yy_arr.max()*dd+dd, dd)]
 
     cc_grid = np.ones(xx_grid.shape)*(-99.0)
-
+    
+    query = 'SELECT gal_l, gal_b, parallax FROM %s' % args.table
+    chunk_iter = db.get_chunk_iterator(query, chunk_size=100000, dtype=dtype)
+    for chunk in chunk_iter:
+        xyz = xyz_from_lon_lat_px(chunk['gal_l'], chunk['gal_b'],
+                                  0.001*chunk['px'])
+        
     for ix, iy, cc in zip(xx_arr, yy_arr, ct_arr):
         cc_grid[ix-xx_arr.min()][iy-yy_arr.min()] = cc
 
