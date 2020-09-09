@@ -392,6 +392,35 @@ class GalSimBase(InstanceCatalog, CameraCoords):
         if self.galSimInterpreter is not None:
             self.galSimInterpreter.setPSF(PSF=PSF)
 
+            for hlr in hlrTestList:
+            create_text_catalog(obs, dbFileName, np.array([3.0]), np.array([1.0]),
+                                hlr=[hlr])
+
+            db = hlrFileDBObj(dbFileName, runtable='test')
+
+            cat = hlrCatSersic(db, obs_metadata=obs)
+            cat.camera_wrapper = GalSimCameraWrapper(self.camera)
+
+            cat.write_catalog(catName)
+            cat.write_images(nameRoot=imageRoot)
+
+            totalFlux, hlrFlux = self.get_flux_in_half_light_radius(imageName, hlr, detector, self.camera, obs)
+            self.assertGreater(totalFlux, 1000.0)  # make sure the image is not blank
+
+            # divide by gain because Poisson stats apply to photons
+            sigmaFlux = np.sqrt(0.5*totalFlux/cat.photParams.gain)
+            self.assertLess(np.abs(hlrFlux-0.5*totalFlux), 4.0*sigmaFlux)
+
+            if os.path.exists(catName):
+                os.unlink(catName)
+            if os.path.exists(dbFileName):
+                os.unlink(dbFileName)
+            if os.path.exists(imageName):
+                os.unlink(imageName)
+
+        if os.path.exists(scratchDir):
+            shutil.rmtree(scratchDir)
+            
     def copyGalSimInterpreter(self, otherCatalog):
         """
         Copy the camera, GalSimInterpreter, from another GalSim InstanceCatalog
