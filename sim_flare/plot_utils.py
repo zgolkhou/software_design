@@ -77,6 +77,6 @@ def make_density_plot(xx_in, yy_in, dd, cmin=0, cmax=50, dc=25):
 
     cb = plt.colorbar()
     plt.clim(cmin,cmax)
-    cb.set_ticks(np.arange(cmin,cmax+10,dc))
+    cb.set_ticks(np.arange(cmin,cmax+45,dc))
 
     return None
