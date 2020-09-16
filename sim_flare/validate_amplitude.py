@@ -48,6 +48,41 @@ amplitude_kp = amplitude_u/0.65
 
 amp_rel = amplitude_kp/np.power(10.0, log_ekp_quiescent)
 
+def _build_activity_model():
+    """
+    Read in data taken from West et al. 2008 (AJ 135, 785).
+    For each spectral type, return the parametrs A, tau, B
+    needed to model spectral activity as a function of
+    distance from the Galactic Plane as
+    fraction active = A*exp(-z/tau) + B
+    """
+    data_dir = 'data/activity_by_type'
+
+    dtype = np.dtype([('z', float), ('frac', float),
+                      ('min', float), ('max', float)])
+
+    model_aa = []
+    model_bb = []
+    model_tau = []
+    for i_type in range(9):
+        model_type = 'M%d' % i_type
+        data_name = os.path.join(data_dir, '%s.txt' % model_type)
+        data = np.genfromtxt(data_name, dtype=dtype)
+
+        sigma_arr = []
+        for nn, xx in zip(data['min'], data['max']):
+            if nn>1.0e-20 and xx<0.999:
+                sigma = 0.5*(xx-nn)
+            else:
+                sigma = xx-nn
+            sigma_arr.append(sigma)
+        aa, tau, bb = fit_to_exp_decay(data['z'], data['frac'], np.array(sigma_arr))
+        model_aa.append(aa)
+        model_bb.append(bb)
+        model_tau.append(tau)
+
+    return np.array(model_aa), np.array(model_bb), np.array(model_tau)
+  
 dx=0.05
 plt.figsize = (30, 30)
 plt.subplot(2,2,1)
