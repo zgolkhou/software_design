@@ -62,7 +62,7 @@ def make_density_plot(xx_in, yy_in, dd, cmin=0, cmax=50, dc=25):
     cc_grid = np.ones(xx_grid.shape)*(-99.0)
     
     query = 'SELECT gal_l, gal_b, parallax FROM %s' % args.table
-    chunk_iter = db.get_chunk_iterator(query, chunk_size=100000, dtype=dtype)
+    chunk_iter = db.get_chunk_iterator(query, chunk_size=100, dtype=dtype)
     for chunk in chunk_iter:
         xyz = xyz_from_lon_lat_px(chunk['gal_l'], chunk['gal_b'],
                                   0.001*chunk['px'])
