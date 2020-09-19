@@ -32,8 +32,8 @@ print 'took %e vectorized' % (time.time()-t_start)
 
 np.testing.assert_array_equal(ff_control, ff_test)
 
-r_i = rng.random_sample(n_stars)*3.0
-i_z = rng.random_sample(n_stars)*2.0
+r_i = rng.random_sample(n_stars)*5.0
+i_z = rng.random_sample(n_stars)*3.0
 
 from mdwarf_utils import activity_type_from_color_z
 
