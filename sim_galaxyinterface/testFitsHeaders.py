@@ -85,7 +85,7 @@ class FitsHeaderTest(unittest.TestCase):
 
         obs = ObservationMetaData(pointingRA=32.0, pointingDec=22.0,
                                   boundLength=0.1, boundType='circle',
-                                  mjd=58000.0, rotSkyPos=14.0, bandpassName='u')
+                                  mjd=58000.0, rotSkyPos=10.0, bandpassName='u')
 
         obs.OpsimMetaData = {'obshistID': 112}
 
