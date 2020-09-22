@@ -14,7 +14,7 @@ from lsst.sims.catalogs.db import fileDBObject
 from lsst.sims.GalSimInterface import GalSimStars, SNRdocumentPSF
 from lsst.sims.GalSimInterface import GalSimCameraWrapper
 from lsst.sims.GalSimInterface import LSSTCameraWrapper
-#from lsst.sims.coordUtils.utils import ReturnCamera
+from lsst.sims.coordUtils.utils import ReturnCamera
 
 from testUtils import create_text_catalog
 
