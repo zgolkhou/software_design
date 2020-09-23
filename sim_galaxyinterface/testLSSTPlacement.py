@@ -125,9 +125,9 @@ class GalSimPlacementTest(unittest.TestCase):
                                                    band=obs.bandpass,
                                                    obs_metadata=obs)
 
-            nSamples = 3
+            nSamples = 30
             rng = np.random.RandomState(42)
-            fwhm = 0.2
+            fwhm = 0.12
 
             for iteration in range(nSamples):
                 if os.path.exists(dbFileName):
