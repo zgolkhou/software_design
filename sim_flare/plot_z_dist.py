@@ -45,4 +45,4 @@ if __name__ == "__main__":
     plt.plot(np.log10(z_grid), ct_grid)
     plt.xlabel('z (pc)')
     plt.ylabel('number of stars')
-    plt.savefig(os.path.join(fig_dir, 'z_distribution_of_stars.png'))
+    plt.savefig(os.path.join(fig_dir, 'z_distribution_of_stars.jpg'))
