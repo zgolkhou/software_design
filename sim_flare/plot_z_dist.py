@@ -41,7 +41,7 @@ if __name__ == "__main__":
                 ix = int(np.round(zz/d_z))
                 ct_grid[ix] += cc
 
-    plt.figsize=(30,30)
+    plt.figsize=(60,60)
     plt.plot(np.log10(z_grid), ct_grid)
     plt.xlabel('z (pc)')
     plt.ylabel('number of stars')
