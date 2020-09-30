@@ -581,7 +581,7 @@ def trixelFromHtmid(htmid):
             raise RuntimeError("target %d" % target)
 
         ans = ans.get_child(target)
-        complement >>= 2
+        complement >>= 12
 
     return ans
 
