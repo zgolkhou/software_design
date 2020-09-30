@@ -189,7 +189,7 @@ class Trixel(object):
     _d_center = 8.33e3 # distance from the Sun to Sgr A* from
                        # Gillessen et al 2009 (ApJ 692, 1075) eqn 11
 
-    _lon_center = 359.9442
+    _lon_center = 320.9442
     _lat_center = -0.0462 # galactic latitude and longitude of Sgr A* from
                           # http://simbad.u-strasbg.fr/simbad/sim-basic?Ident=Sagittarius+A&submit=SIMBAD+search
 
