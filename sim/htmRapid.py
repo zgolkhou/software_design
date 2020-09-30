@@ -190,7 +190,7 @@ class Trixel(object):
                        # Gillessen et al 2009 (ApJ 692, 1075) eqn 11
 
     _lon_center = 320.9442
-    _lat_center = -0.0462 # galactic latitude and longitude of Sgr A* from
+    _lat_center = -0.0412 # galactic latitude and longitude of Sgr A* from
                           # http://simbad.u-strasbg.fr/simbad/sim-basic?Ident=Sagittarius+A&submit=SIMBAD+search
 
     _au_to_parsec = 1.0/206265.0
