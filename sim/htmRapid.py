@@ -65,7 +65,7 @@ class Trixel(object):
 
     def __eq__(self, other):
 
-        tol = 1.0e-20
+        tol = 1.0e-15
 
         if self._htmid == other._htmid:
             if self._level == other._level:
