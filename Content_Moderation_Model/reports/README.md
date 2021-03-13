@@ -1,1 +1,1 @@
-Hi
+Report file including figures.
