@@ -1,6 +1,6 @@
 # Content Moderation Model
 
-A model to identify reviews that violate iHerb content rules.
+A model to identify reviews that violate content rules.
 
 Project Organization
 ------------
