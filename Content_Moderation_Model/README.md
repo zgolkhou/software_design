@@ -1,6 +1,3 @@
-Last login: Fri Mar 12 12:06:11 on console
-(base) Zachs-iMac:~ zach$ vi /Users/zach/Desktop/content-moderation-model/README.md 
-
 # Content Moderation Model
 
 A model to identify reviews that violate iHerb content rules.
